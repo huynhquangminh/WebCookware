@@ -1,0 +1,83 @@
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="heading">
+                    <h1>Liên hệ với chúng tôi</h1>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-style">
+                <form novalidate  accept-charset='UTF-8' id='contact' (ngSubmit)="onSubmit(from.value)" [formGroup]="from">
+                    <input name='FormType' type='hidden' value='contact' />
+                    <input name='utf8' type='hidden' value='true' />
+                    <label>Họ và tên:
+                        <span>*</span>
+                    </label>
+                    <input 
+                    formControlName="userName"
+                    name="userName"
+                    
+                    type="text" value=""
+                    class="form-text"
+                    >
+                    <label>Email:
+                        <span>*</span>
+                    </label>
+                    <input formControlName="email"
+                    name="email"
+                    type="text"
+                    value=""
+                    class="form-text"
+                    placement="top">
+                    <label>Nội dung:
+                        <span>*</span>
+                    </label>
+                    <textarea formControlName="content"
+                    name="email"
+                    class="form-textarea" 
+                    rows="10"
+                    placement="top"></textarea>
+                    <button  type="submit"  class="form-button">Gửi liên hệ</button>
+                </form>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-about form-style">
+
+                <img src="assets/assets/logo-footer.png?1493875157619" alt="Cookwave theme">
+
+                <ul>
+
+                    <li>
+                        <i class="fa fa-map-marker"></i>
+                        <p>Tầng 4 - Tòa nhà Hanoi Group, 442 Đội Cấn, Ba Đình, Hà Nội</p>
+                    </li>
+
+
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        <p>(84-4) 6655.8868</p>
+                    </li>
+
+
+                    <li>
+                        <i class="fa fa-fax"></i>
+                        <p>(84-4) 3786.8904</p>
+                    </li>
+
+
+                    <li>
+                        <i class="fa fa-envelope"></i>
+                        <a href="support@bizweb.vn">support@bizweb.vn</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="box-maps">
+        <div class="google-map">
+            <div id="contact_map" class="map"></div>
+        </div>
+    </div>
+</section>

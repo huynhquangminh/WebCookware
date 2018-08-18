@@ -20,12 +20,23 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/image"
             ],
             "styles": [
-              "src/styles.css"
+
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/assets/jquery-1.11.3.min.js",
+              "src/assets/assets/bootstrap.min.js",
+              "src/assets/assets/owl.carousel.min.js",
+              "src/assets/assets/bootstrap-notify.min.js",
+              "src/assets/assets/themes_support/api.jquery.js",
+              "src/assets/assets/themes_support/common.js",
+              "src/assets/assets/themes_support/customer.js",
+              "src/assets/assets/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,7 +83,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [

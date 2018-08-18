@@ -1,0 +1,37 @@
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <nav class="nav-category block">
+        <h2 id="click_show_cate">Danh mục</h2>
+        <ul id="show_cate">
+            <li *ngFor="let item of listCategory">
+                <a routerLink="/home/category/product/{{item.ID}}">
+                    <img src="../../../assets/image/{{item.ImageCategory}}" alt="{{item.NameCategory}}">
+                    <img src="../../../assets/image/{{item.ImageCategory}}" alt="{{item.NameCategory}}"> {{item.NameCategory}}</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="online_support block">
+        <div class="new_title">
+            <h2>Hỗ trợ trực tuyến</h2>
+        </div>
+        <div class="block-content">
+            <div class="sp_1">
+                <p>Tư vấn bán hàng 1</p>
+                <p>Mrs. Dung:
+                    <span>(04) 3786 8904</span>
+                </p>
+            </div>
+            <div class="sp_2">
+                <p>Tư vấn bán hàng 2</p>
+                <p>Mr. Tuấn:
+                    <span>(04) 3786 8904</span>
+                </p>
+            </div>
+            <div class="sp_mail">
+                <p>Email liên hệ</p>
+                <p>
+                    <a href="mailto:support@bizweb.vn">support@bizweb.vn</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

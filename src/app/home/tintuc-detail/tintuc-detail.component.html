@@ -1,0 +1,106 @@
+<section class="bread-crumb" *ngIf ="itemNewsDetail">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <ul class="breadcrumb">
+          <li>
+            <a href="/">Trang chủ</a>
+          </li>
+
+          <li>
+            <a href='/tin-tuc'>Tin tức</a>
+          </li>
+          <li class="active">
+            <span>{{itemNewsDetail.NameNews}}</span>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="article" *ngIf ="itemNewsDetail">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-push-3 col-md-9 col-sm-12 col-xs-12 content">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="article-image">
+              <a href="/co-nen-dung-lo-vi-song-de-nuong-banh">
+                <img class="img-responsive" src="/assets/image/news/{{itemNewsDetail.ImageNews}}" alt="Có nên dùng lò vi sóng để nướng bánh?">
+              </a>
+            </div>
+            <h1 class="article-title">
+              <a href="/co-nen-dung-lo-vi-song-de-nuong-banh">{{itemNewsDetail.NameNews}}</a>
+            </h1>
+            <p class="article-info">
+              <span>
+                <i class="fa fa-user"></i>{{itemNewsDetail.UserName}}</span>
+              <span>
+                <i class="fa fa-clock-o"></i> {{itemNewsDetail.Date}}</span>
+              <span>
+                <i class="fa fa-comments"></i> {{itemNewsDetail.ViewMax}}</span>
+            </p>
+            <div class="article-content">
+              <p style="text-align: justify;">
+                {{itemNewsDetail.DescriptionNews}}
+              </p>
+
+             
+            </div>
+            <div class="share-blog" style="float:right; padding: 10px 0px;">
+              <b>Chia sẻ: &nbsp;</b>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=co-nen-dung-lo-vi-song-de-nuong-banh" class="facebook">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a href="https://twitter.com/home?status=co-nen-dung-lo-vi-song-de-nuong-banh" class="twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="https://plus.google.com/share?url=co-nen-dung-lo-vi-song-de-nuong-banh" class="google">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-pull-9 col-md-3 col-sm-12 col-xs-12 sidebar">
+        <div class="box">
+          <div class="heading">
+            <h2>Tin tức xem nhiều</h2>
+          </div>
+          <ul class="nav-blog">
+
+            <li *ngFor = "let item of newsbyview">
+              <div class="article-item2">
+                <a [routerLink]="['../../news-detail',item.ID]">
+                  <img class="img-responsive" src="/assets/image/news/{{item.ImageNews}}" alt="{{item.NameNews}}">
+                  <h3>{{item.NameNews}}</h3>
+                </a>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="box">
+          <div class="heading">
+            <h2>Tags</h2>
+          </div>
+          <div class="box-content tags">
+            <a href="">Lò vi sóng</a>
+
+            <a href="">Bếp nướng</a>
+
+            <a href="">Máy sinh tố</a>
+
+            <a href="">Nồi thủy điện</a>
+
+            <a href="">Ấm đun nước</a>
+
+            <a href="">Ấm siêu tốc</a>
+          </div>
+          <div id="bw-statistics"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

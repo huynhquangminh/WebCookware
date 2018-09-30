@@ -8,6 +8,6 @@ namespace BusinessLogicInterface
 {
     public interface IRoleBusinessLogic
     {
-
+        // abc
     }
 }

@@ -290,5 +290,41 @@ namespace EntityData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EDIT_NEWS", iDParameter, nameNewsParameter, iDCreaterParameter, dateParameter, imageNewsParameter, imageNewDetailParameter, viewMaxParameter, descriptionNewsParameter);
         }
+    
+        public virtual int DELETE_ROLES(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DELETE_ROLES", iDParameter);
+        }
+    
+        public virtual ObjectResult<GET_LIST_ROLE_Result> GET_LIST_ROLE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_LIST_ROLE_Result>("GET_LIST_ROLE");
+        }
+    
+        public virtual int INSERT_ROLES(string rOLENAME)
+        {
+            var rOLENAMEParameter = rOLENAME != null ?
+                new ObjectParameter("ROLENAME", rOLENAME) :
+                new ObjectParameter("ROLENAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_ROLES", rOLENAMEParameter);
+        }
+    
+        public virtual int UPDATE_ROLES(Nullable<int> iD, string rOLENAME)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var rOLENAMEParameter = rOLENAME != null ?
+                new ObjectParameter("ROLENAME", rOLENAME) :
+                new ObjectParameter("ROLENAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_ROLES", iDParameter, rOLENAMEParameter);
+        }
     }
 }

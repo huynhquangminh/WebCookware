@@ -173,6 +173,9 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="DELETE_NEWS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
+        <Function Name="DELETE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
         <Function Name="EDIT_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
           <Parameter Name="NameCategory" Type="nvarchar" Mode="In" />
@@ -196,6 +199,7 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="GET_INFO_WEBSITE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_INTRODUCTION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_BANNER_IMG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GET_LIST_ROLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_SLIDER_IMG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_PRODUCT_BY_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDCategory" Type="int" Mode="In" />
@@ -225,6 +229,13 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         </Function>
         <Function Name="GETPRODUCTDETAIL_BY_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="INSERT_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ROLENAME" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UPDATE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="ROLENAME" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="CookwareDBModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -504,7 +515,7 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
             <Parameter Name="DescriptionNews" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DELETE_NEWS">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EDIT_NEWS">
             <Parameter Name="ID" Mode="In" Type="Int32" />
@@ -515,6 +526,17 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
             <Parameter Name="ImageNewDetail" Mode="In" Type="String" />
             <Parameter Name="ViewMax" Mode="In" Type="Int32" />
             <Parameter Name="DescriptionNews" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DELETE_ROLES">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GET_LIST_ROLE" ReturnType="Collection(CookwareDBModel.GET_LIST_ROLE_Result)" />
+          <FunctionImport Name="INSERT_ROLES">
+          <Parameter Name="ROLENAME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_ROLES">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="ROLENAME" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="FIND_PRODUCT_Result">
@@ -689,6 +711,10 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Property Type="Int32" Name="Amount" Nullable="false" />
           <Property Type="Int32" Name="IDCategory" Nullable="true" />
           <Property Type="String" Name="NameCategory" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GET_LIST_ROLE_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="true" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1060,6 +1086,17 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <FunctionImportMapping FunctionImportName="ADD_NEWS" FunctionName="CookwareDBModel.Store.ADD_NEWS" />
           <FunctionImportMapping FunctionImportName="DELETE_NEWS" FunctionName="CookwareDBModel.Store.DELETE_NEWS" />
           <FunctionImportMapping FunctionImportName="EDIT_NEWS" FunctionName="CookwareDBModel.Store.EDIT_NEWS" />
+          <FunctionImportMapping FunctionImportName="DELETE_ROLES" FunctionName="CookwareDBModel.Store.DELETE_ROLES" />
+          <FunctionImportMapping FunctionImportName="GET_LIST_ROLE" FunctionName="CookwareDBModel.Store.GET_LIST_ROLE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CookwareDBModel.GET_LIST_ROLE_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INSERT_ROLES" FunctionName="CookwareDBModel.Store.INSERT_ROLES" />
+          <FunctionImportMapping FunctionImportName="UPDATE_ROLES" FunctionName="CookwareDBModel.Store.UPDATE_ROLES" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

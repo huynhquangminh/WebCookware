@@ -97,6 +97,7 @@
     <Compile Include="Dtos\GetProductAllDto.cs" />
     <Compile Include="Dtos\GetProductIndex.cs" />
     <Compile Include="Dtos\ProductDetailDto.cs" />
+    <Compile Include="Dtos\RolesListDto.cs" />
     <Compile Include="Dtos\SendMailCommentCustomerDto.cs" />
     <Compile Include="Dtos\SupportFeatureDto.cs" />
     <Compile Include="ICategoryBusinessLogic.cs" />
@@ -104,9 +105,11 @@
     <Compile Include="IIntroductionBusinessLogic.cs" />
     <Compile Include="INewsBusinessLogic.cs" />
     <Compile Include="IProductBusinessLogic.cs" />
+    <Compile Include="IRoleBusinessLogic.cs" />
     <Compile Include="ISupportFeatureBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\AddCategoryRequest.cs" />
+    <Compile Include="Requests\ActionRoleRequest.cs" />
     <Compile Include="Requests\Add_NewsRequest.cs" />
     <Compile Include="Requests\DeleteCategoryRequest.cs" />
     <Compile Include="Requests\Delete_NewsRequest.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="Response\GetProductAllResponse.cs" />
     <Compile Include="Response\GetProductIndexResponse.cs" />
     <Compile Include="Response\GetProductDetailResponse.cs" />
+    <Compile Include="Response\RolesListResponse.cs" />
     <Compile Include="Response\SupportFeatureResponse.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -252,6 +252,17 @@
       <Parameter Name="ViewMax" Mode="In" Type="Int32" />
       <Parameter Name="DescriptionNews" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="DELETE_ROLES">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GET_LIST_ROLE" ReturnType="Collection(CookwareDBModel.GET_LIST_ROLE_Result)" />
+    <FunctionImport Name="INSERT_ROLES">
+      <Parameter Name="ROLENAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UPDATE_ROLES">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="ROLENAME" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="FIND_PRODUCT_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -425,5 +436,9 @@
     <Property Type="Int32" Name="Amount" Nullable="false" />
     <Property Type="Int32" Name="IDCategory" Nullable="true" />
     <Property Type="String" Name="NameCategory" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GET_LIST_ROLE_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="100" />
   </ComplexType>
 </Schema>

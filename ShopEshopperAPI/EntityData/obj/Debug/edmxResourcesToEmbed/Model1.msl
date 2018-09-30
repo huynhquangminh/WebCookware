@@ -365,5 +365,16 @@
     <FunctionImportMapping FunctionImportName="ADD_NEWS" FunctionName="CookwareDBModel.Store.ADD_NEWS" />
     <FunctionImportMapping FunctionImportName="DELETE_NEWS" FunctionName="CookwareDBModel.Store.DELETE_NEWS" />
     <FunctionImportMapping FunctionImportName="EDIT_NEWS" FunctionName="CookwareDBModel.Store.EDIT_NEWS" />
+    <FunctionImportMapping FunctionImportName="DELETE_ROLES" FunctionName="CookwareDBModel.Store.DELETE_ROLES" />
+    <FunctionImportMapping FunctionImportName="GET_LIST_ROLE" FunctionName="CookwareDBModel.Store.GET_LIST_ROLE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CookwareDBModel.GET_LIST_ROLE_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="INSERT_ROLES" FunctionName="CookwareDBModel.Store.INSERT_ROLES" />
+    <FunctionImportMapping FunctionImportName="UPDATE_ROLES" FunctionName="CookwareDBModel.Store.UPDATE_ROLES" />
   </EntityContainerMapping>
 </Mapping>

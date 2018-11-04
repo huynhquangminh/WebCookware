@@ -28,6 +28,7 @@ E:\WEB_ASP_Online\ShopEshopperAPI\DataAccess\bin\Debug\Unity.ServiceLocation.pdb
 E:\WEB_ASP_Online\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.dll
 E:\WEB_ASP_Online\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.pdb
+E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\DataAccess.dll.config
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\DataAccess.dll
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\DataAccess.pdb
@@ -55,6 +56,5 @@ E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\Unity.Interception.pd
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\Unity.Interception.Configuration.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\Unity.RegistrationByConvention.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\bin\Debug\Unity.ServiceLocation.pdb
-E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.dll
 E:\WEB_ASP_Online\API\ShopEshopperAPI\DataAccess\obj\Debug\DataAccess.pdb

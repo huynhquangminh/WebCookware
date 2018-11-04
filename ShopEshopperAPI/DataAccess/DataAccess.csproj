@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDataAccess.cs" />
+    <Compile Include="CustomerDataAccess.cs" />
     <Compile Include="HeaderDataAccess.cs" />
     <Compile Include="IntroductionDataAccess.cs" />
     <Compile Include="NewsDataAccess.cs" />

@@ -326,5 +326,73 @@ namespace EntityData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_ROLES", iDParameter, rOLENAMEParameter);
         }
+    
+        public virtual int DELETE_CUSTOMER(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DELETE_CUSTOMER", iDParameter);
+        }
+    
+        public virtual ObjectResult<GET_LIST_CUSTOMERS_Result> GET_LIST_CUSTOMERS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_LIST_CUSTOMERS_Result>("GET_LIST_CUSTOMERS");
+        }
+    
+        public virtual int INSERT_CUSTOMER(string telephone, string userName, string password, string nameCustomer, Nullable<int> roleID)
+        {
+            var telephoneParameter = telephone != null ?
+                new ObjectParameter("Telephone", telephone) :
+                new ObjectParameter("Telephone", typeof(string));
+    
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var nameCustomerParameter = nameCustomer != null ?
+                new ObjectParameter("NameCustomer", nameCustomer) :
+                new ObjectParameter("NameCustomer", typeof(string));
+    
+            var roleIDParameter = roleID.HasValue ?
+                new ObjectParameter("RoleID", roleID) :
+                new ObjectParameter("RoleID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_CUSTOMER", telephoneParameter, userNameParameter, passwordParameter, nameCustomerParameter, roleIDParameter);
+        }
+    
+        public virtual int UPDATE_CUSTOMER(Nullable<int> iD, string telephone, string userName, string password, string nameCustomer, Nullable<int> roleID)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var telephoneParameter = telephone != null ?
+                new ObjectParameter("Telephone", telephone) :
+                new ObjectParameter("Telephone", typeof(string));
+    
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var nameCustomerParameter = nameCustomer != null ?
+                new ObjectParameter("NameCustomer", nameCustomer) :
+                new ObjectParameter("NameCustomer", typeof(string));
+    
+            var roleIDParameter = roleID.HasValue ?
+                new ObjectParameter("RoleID", roleID) :
+                new ObjectParameter("RoleID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_CUSTOMER", iDParameter, telephoneParameter, userNameParameter, passwordParameter, nameCustomerParameter, roleIDParameter);
+        }
     }
 }

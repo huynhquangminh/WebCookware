@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryBusinessLogic.cs" />
+    <Compile Include="CustomerBusinessLogic.cs" />
     <Compile Include="HeaderBusinessLogic.cs" />
     <Compile Include="IntroductionBusinessLogic.cs" />
     <Compile Include="NewsBusinessLogic.cs" />

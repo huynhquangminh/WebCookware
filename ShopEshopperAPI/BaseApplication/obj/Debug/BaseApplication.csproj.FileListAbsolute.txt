@@ -48,8 +48,6 @@ E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\AutoMapper.xml
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\CommonServiceLocator.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\EntityFramework.xml
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\EntityFramework.SqlServer.xml
-E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Newtonsoft.Json.xml
-E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\System.Web.Http.xml
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.Abstractions.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.Configuration.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.Container.pdb
@@ -57,6 +55,6 @@ E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.Intercepti
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.Interception.Configuration.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.RegistrationByConvention.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\bin\Debug\Unity.ServiceLocation.pdb
-E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\obj\Debug\BaseApplication.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\obj\Debug\BaseApplication.dll
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\obj\Debug\BaseApplication.pdb
+E:\WEB_ASP_Online\API\ShopEshopperAPI\BaseApplication\obj\Debug\BaseApplication.csprojResolveAssemblyReference.cache

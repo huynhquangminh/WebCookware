@@ -51,7 +51,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 response.Success = false;
             }
@@ -75,7 +75,7 @@ namespace BusinessLogic
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return await Task.FromResult(false);
             }

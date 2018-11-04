@@ -376,5 +376,20 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="INSERT_ROLES" FunctionName="CookwareDBModel.Store.INSERT_ROLES" />
     <FunctionImportMapping FunctionImportName="UPDATE_ROLES" FunctionName="CookwareDBModel.Store.UPDATE_ROLES" />
+    <FunctionImportMapping FunctionImportName="DELETE_CUSTOMER" FunctionName="CookwareDBModel.Store.DELETE_CUSTOMER" />
+    <FunctionImportMapping FunctionImportName="GET_LIST_CUSTOMERS" FunctionName="CookwareDBModel.Store.GET_LIST_CUSTOMERS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CookwareDBModel.GET_LIST_CUSTOMERS_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NameCustomer" ColumnName="NameCustomer" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="INSERT_CUSTOMER" FunctionName="CookwareDBModel.Store.INSERT_CUSTOMER" />
+    <FunctionImportMapping FunctionImportName="UPDATE_CUSTOMER" FunctionName="CookwareDBModel.Store.UPDATE_CUSTOMER" />
   </EntityContainerMapping>
 </Mapping>

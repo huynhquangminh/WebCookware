@@ -105,6 +105,7 @@ E:\WEB_ASP_Online\ShopEshopperAPI\ShopEshopperAPI\bin\EntityData.pdb
 E:\WEB_ASP_Online\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.dll
 E:\WEB_ASP_Online\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.pdb
+E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\roslyn\csc.exe
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -209,6 +210,5 @@ E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\Microsoft.Owin.Securit
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\System.Web.Http.Owin.xml
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\bin\EntityData.pdb
-E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.dll
 E:\WEB_ASP_Online\API\ShopEshopperAPI\ShopEshopperAPI\obj\Debug\ShopEshopperAPI.pdb

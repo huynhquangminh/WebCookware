@@ -59,7 +59,7 @@ namespace BusinessLogic
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 response.Success = false;
             }
@@ -90,7 +90,7 @@ namespace BusinessLogic
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 response.Success = false;
             }
@@ -119,15 +119,15 @@ namespace BusinessLogic
                 };
                 _dataAccess.Add_News(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+            
         }
 
         /// <summary>
@@ -153,15 +153,15 @@ namespace BusinessLogic
                 };
                 _dataAccess.Edit_News(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+           
         }
 
         /// <summary>
@@ -181,15 +181,15 @@ namespace BusinessLogic
                 };
                 _dataAccess.Delete_News(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+            
         }
 
     }

@@ -65,8 +65,6 @@ E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\bin\Debug\Unity.Int
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\bin\Debug\Unity.Interception.Configuration.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\bin\Debug\Unity.RegistrationByConvention.pdb
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\bin\Debug\Unity.ServiceLocation.pdb
-E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\bin\Debug\System.Web.Http.xml
-E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\bin\Debug\Newtonsoft.Json.xml
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\obj\Debug\BusinessLogicInterface.csprojResolveAssemblyReference.cache
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\obj\Debug\BusinessLogicInterface.dll
 E:\WEB_ASP_Online\API\ShopEshopperAPI\BusinessLogicInterface\obj\Debug\BusinessLogicInterface.pdb

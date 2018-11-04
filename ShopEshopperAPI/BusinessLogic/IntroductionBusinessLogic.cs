@@ -48,7 +48,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 response.Success = false;
             }

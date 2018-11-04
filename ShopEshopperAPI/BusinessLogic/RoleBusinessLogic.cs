@@ -51,7 +51,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 response.Success = false;
             }
@@ -74,14 +74,14 @@ namespace BusinessLogic
                 };
                 _dataAccess.AddRoles(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+            
         }
 
         /// <summary>
@@ -101,14 +101,14 @@ namespace BusinessLogic
                 };
                 _dataAccess.UpdateRoles(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+           
         }
 
         /// <summary>
@@ -127,14 +127,14 @@ namespace BusinessLogic
                 };
                 _dataAccess.DeleteRoles(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+           
         }
     }
 }

@@ -54,7 +54,7 @@ namespace BusinessLogic
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 response.Success = false;
             }
@@ -81,10 +81,10 @@ namespace BusinessLogic
                 return result;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                
             }
             return await Task.FromResult(result);
         }
@@ -110,10 +110,10 @@ namespace BusinessLogic
                 return result;
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+               
             }
             return await Task.FromResult(result);
         }
@@ -134,15 +134,15 @@ namespace BusinessLogic
                 };
                 _dataAccess.DeleteCategory(param);
                 result = true;
-                return result;
+                return await Task.FromResult(result);
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 result = false;
-                return result;
+                return await Task.FromResult(result);
             }
-            return await Task.FromResult(result);
+            
         }
     }
 }

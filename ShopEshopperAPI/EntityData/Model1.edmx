@@ -170,6 +170,9 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="DELETE_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
+        <Function Name="DELETE_CUSTOMER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
         <Function Name="DELETE_NEWS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
@@ -199,6 +202,7 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="GET_INFO_WEBSITE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_INTRODUCTION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_BANNER_IMG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GET_LIST_CUSTOMERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_ROLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_SLIDER_IMG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_PRODUCT_BY_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -230,8 +234,23 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="GETPRODUCTDETAIL_BY_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
+        <Function Name="INSERT_CUSTOMER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="NameCustomer" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleID" Type="int" Mode="In" />
+        </Function>
         <Function Name="INSERT_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ROLENAME" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UPDATE_CUSTOMER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Telephone" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="NameCustomer" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleID" Type="int" Mode="In" />
         </Function>
         <Function Name="UPDATE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
@@ -538,6 +557,25 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="ROLENAME" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="DELETE_CUSTOMER">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GET_LIST_CUSTOMERS" ReturnType="Collection(CookwareDBModel.GET_LIST_CUSTOMERS_Result)" />
+          <FunctionImport Name="INSERT_CUSTOMER">
+            <Parameter Name="Telephone" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="NameCustomer" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_CUSTOMER">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Telephone" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="NameCustomer" Mode="In" Type="String" />
+            <Parameter Name="RoleID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="FIND_PRODUCT_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -715,6 +753,14 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <ComplexType Name="GET_LIST_ROLE_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="RoleName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GET_LIST_CUSTOMERS_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Telephone" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NameCustomer" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="RoleId" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1097,6 +1143,21 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="INSERT_ROLES" FunctionName="CookwareDBModel.Store.INSERT_ROLES" />
           <FunctionImportMapping FunctionImportName="UPDATE_ROLES" FunctionName="CookwareDBModel.Store.UPDATE_ROLES" />
+          <FunctionImportMapping FunctionImportName="DELETE_CUSTOMER" FunctionName="CookwareDBModel.Store.DELETE_CUSTOMER" />
+          <FunctionImportMapping FunctionImportName="GET_LIST_CUSTOMERS" FunctionName="CookwareDBModel.Store.GET_LIST_CUSTOMERS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CookwareDBModel.GET_LIST_CUSTOMERS_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="NameCustomer" ColumnName="NameCustomer" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INSERT_CUSTOMER" FunctionName="CookwareDBModel.Store.INSERT_CUSTOMER" />
+          <FunctionImportMapping FunctionImportName="UPDATE_CUSTOMER" FunctionName="CookwareDBModel.Store.UPDATE_CUSTOMER" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

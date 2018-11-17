@@ -12,6 +12,7 @@ import { ProductDetailDto } from '../model/productdetailDto';
 export class ProductDetailComponent implements OnInit, OnDestroy {
   private sub: any;
   Amount = 1;
+  img = '/assets/image/products/product1.jpg';
   productdetaildto: ProductDetailDto = {
     id: 0
   };

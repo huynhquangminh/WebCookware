@@ -1,8 +1,15 @@
 <div id="content">
+        <ngx-spinner
+        bdColor = "rgba(239,234,234,0.8)"
+        size = "default"
+        color = "#fc0729"
+        type = "ball-atom"
+        ></ngx-spinner>
     <header id="header">
         <div class="header-top">
             <div class="container">
                 <div class="row">
+                       
                     <div class="col-lg-5 col-md-4 col-sm-6 col-xs-12">
                         <a href="/" class="logo">
                             <img src="../../assets/assets/logo.png?1493875157619" alt="Cookwave theme">
@@ -16,20 +23,21 @@
                             <div class="nav-account-cart">
                                 <ul>
                                     <li class="nav-account">
-                                        <a href="/account">
-                                            <i class="fa fa-user"></i> Tài khoản </a>
+                                        <a *ngIf = "infoUserLogin.id === '' "><i class="fa fa-user"></i> Tài khoản </a>
                                         <span id="click_show">
+                                            <i class="fa fa-angle-down" *ngIf = "infoUserLogin.id === '' "></i>
+                                        </span>
+                                        <a *ngIf = "infoUserLogin.id !== '' "><i class="fa fa-user"></i> <img src="{{infoUserLogin.imguser}}"> </a>
+                                        <span id="click_show" *ngIf = "infoUserLogin.id !== '' " >
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                         <ul id="account_show">
-
                                             <li>
-                                                <a href="/account/login">Đăng nhập</a>
+                                                <a routerLink = "/home/login">Đăng nhập</a>
                                             </li>
                                             <li>
-                                                <a href="/account/register">Đăng ký</a>
+                                                <a routerLink = "/home/login">Đăng ký</a>
                                             </li>
-
                                         </ul>
                                     </li>
                                     <li class="nav-cart">
@@ -45,8 +53,8 @@
                             </div>
                             <div class="form-search hidden-xs">
                                 <form method="get" action="/search">
-                                    <input type="text" class="search-query" placeholder="Tìm kiếm sản phẩm" value="" name="query">
-                                    <button type="submit" class="search-submit">
+                                    <input type="text" class="search-query" placeholder="Tìm kiếm sản phẩm" [(ngModel)]="valueSearch" name="query">
+                                    <button type="submit" class="search-submit" (click)= "submitSearch()">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </form>
@@ -73,17 +81,17 @@
                             <ul>
 
                                 <li class="active">
-                                    <a routerLink="home/index">Trang chủ</a>
+                                    <a routerLink="/home/index">Trang chủ</a>
 
                                 </li>
 
                                 <li>
-                                    <a routerLink="home/introduce">Giới thiệu</a>
+                                    <a routerLink="/home/introduce">Giới thiệu</a>
 
                                 </li>
 
                                 <li>
-                                    <a [routerLink]="['home/product',1]">Sản phẩm</a>
+                                    <a routerLink="['/home/product',1]">Sản phẩm</a>
 
                                     <ul class="nav-main-sub">
 
@@ -94,12 +102,12 @@
 
                                 </li>
                                 <li>
-                                    <a routerLink="home/news">Tin tức</a>
+                                    <a routerLink="/home/news">Tin tức</a>
 
                                 </li>
 
                                 <li>
-                                    <a routerLink="home/contact">Liên hệ</a>
+                                    <a routerLink="/home/contact">Liên hệ</a>
 
                                 </li>
 
@@ -130,23 +138,23 @@
                             <ul>
 
                                 <li class="active">
-                                    <a routerLink="home/index">Trang chủ</a>
+                                    <a routerLink="/home/index">Trang chủ</a>
                                 </li>
 
                                 <li>
-                                    <a routerLink="home/introduce" >Giới thiệu</a>
+                                    <a routerLink="/home/introduce" >Giới thiệu</a>
                                 </li>
 
                                 <li>
-                                    <a  [routerLink]="['home/product',1]" >Sản phẩm</a>
+                                    <a  routerLink="/home/product/1" >Sản phẩm</a>
                                 </li>
 
                                 <li>
-                                    <a routerLink="home/news" >Tin tức</a>
+                                    <a routerLink="/home/news" >Tin tức</a>
                                 </li>
 
                                 <li>
-                                    <a routerLink="home/contact">Liên hệ</a>
+                                    <a routerLink="/home/contact">Liên hệ</a>
                                 </li>
 
                             </ul>

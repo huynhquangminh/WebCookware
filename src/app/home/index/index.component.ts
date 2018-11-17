@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../service/app-service';
 import { GETPRODUCTNEW_URL } from './config';
 import { GETLISTNEWSALL_URL } from '../tintuc/config';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -17,7 +17,11 @@ export class IndexComponent implements OnInit {
   listProdictInterest: any = [];
   listProdictPriceSale: any = [];
   listNewsByView: any = [];
-  constructor(private _service: AppService, private router: Router, private _tintucservice : TinTucService) {
+  constructor(
+    private _service: AppService,
+    private router: Router,
+    private _tintucservice: TinTucService,
+  ) {
     this.router.routeReuseStrategy.shouldReuseRoute = function() {
       return false;
    };

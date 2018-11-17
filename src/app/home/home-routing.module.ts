@@ -10,6 +10,8 @@ import { LienheComponent } from './lienhe/lienhe.component';
 import { TintucComponent } from './tintuc/tintuc.component';
 import { TintucDetailComponent } from './tintuc-detail/tintuc-detail.component';
 import { GioithieuComponent } from './gioithieu/gioithieu.component';
+import { FindProductComponent } from './find-product/find-product.component';
+import { Page404Component } from './page404/page404.component';
 const homeRoutes: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index', component: IndexComponent },
@@ -20,7 +22,9 @@ const homeRoutes: Routes = [
     { path: 'news', component: TintucComponent },
     { path: 'category/product/:key', component: CategoryComponent },
     { path: 'news-detail/:id', component: TintucDetailComponent },
-    { path: 'introduce', component: GioithieuComponent }
+    { path: 'introduce', component: GioithieuComponent },
+    { path: 'searchproduct/:key', component: FindProductComponent },
+    { path: '**', component: Page404Component }
 
 ];
 

@@ -1,67 +1,80 @@
 <section class="bread-crumb">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <ul class="breadcrumb">
-                  <li>
-                      <a href="/">Trang chủ</a>
-                  </li>
-                  <li class="active">Đăng nhập</li>
-              </ul>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/">Trang chủ</a>
+                    </li>
+                    <li class="active">Đăng nhập</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="login">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <div class="heading2">
-                  <h1>Đăng nhập</h1>
-              </div>
-              <div class="login-content">
-                  <div class="form-style">
-                      <form accept-charset='UTF-8' action='/account/login' id='customer_login' method='post'>
-                          <input name='FormType' type='hidden' value='customer_login' />
-                          <input name='utf8' type='hidden' value='true' />
-                          <p>Bạn đã có tài khoản? Đăng ký
-                              <a href="/account/register">tại đây</a>
-                          </p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="heading2">
+                    <h1>Đăng nhập</h1>
+                </div>
+                <div class="login-content">
+                    <div class="form-style">
+                        <form accept-charset='UTF-8' action='/account/login' id='customer_login' method='post'>
+                            <input name='FormType' type='hidden' value='customer_login' />
+                            <input name='utf8' type='hidden' value='true' />
+                            <p>Bạn đã có tài khoản? Đăng ký
+                                <a href="/account/register">tại đây</a>
+                            </p>
 
-                          <label>Email:
-                              <span>*</span>
-                          </label>
-                          <input type="email" class="form-text" name="email" required="">
-                          <label>Mật khẩu:
-                              <span>*</span>
-                          </label>
-                          <input type="password" class="form-text" name="password" required="">
-                          <a class="form-link" href="javascript:void(0)" onclick="showRecovery()">Bạn quên mật khẩu</a>
-                          <button class="form-button" type="submit">Đăng nhập</button>
-                      </form>
-                  </div>
-              </div>
-              <div class="login-recovery-content" style="display:none">
-                  <div class="form-style">
-                      <form accept-charset='UTF-8' action='/account/recover' id='recover_customer_password' method='post'>
-                          <input name='FormType' type='hidden' value='recover_customer_password' />
-                          <input name='utf8' type='hidden' value='true' />
-                          <p>Bạn đã có một tài khoản nhưng không nhớ mật khẩu.</p>
-                          <p>Hãy điền Email xuống phía dưới và nhận thông tin qua Email để có thể lấy lại mật khẩu.</p>
+                            <label>Email:
+                                <span>*</span>
+                            </label>
+                            <input type="email" class="form-text" name="email" required="">
+                            <label>Mật khẩu:
+                                <span>*</span>
+                            </label>
+                            <input type="password" class="form-text" name="password" required="">
+                            <a class="form-link" href="javascript:void(0)" onclick="showRecovery()">Bạn quên mật khẩu</a>
+                            <button class="form-button" type="submit">Đăng nhập</button>
+                            <div>
+                                <button class="btn btn-primary" type="submit" (click)="socialSignIn('facebook')">
+                                    <span class="fa fa-facebook"></span> 
+                                    Sign in with Facebook
+                                </button>
+                            </div>
+                            <div>
+                                <button class="btn btn-danger" type="submit">
+                                    <span class="fa fa-google"></span> 
+                                    Sign in with Google &nbsp; &nbsp;  
+                                </button>
+                            </div>
+                           
+                        </form>
+                    </div>
+                </div>
+                <div class="login-recovery-content" style="display:none">
+                    <div class="form-style">
+                        <form accept-charset='UTF-8' action='/account/recover' id='recover_customer_password' method='post'>
+                            <input name='FormType' type='hidden' value='recover_customer_password' />
+                            <input name='utf8' type='hidden' value='true' />
+                            <p>Bạn đã có một tài khoản nhưng không nhớ mật khẩu.</p>
+                            <p>Hãy điền Email xuống phía dưới và nhận thông tin qua Email để có thể lấy lại mật khẩu.</p>
 
-                          <label>Email:
-                              <span>*</span>
-                          </label>
-                          <input type="email" class="form-text" name="Email" required="">
-                          <button class="form-button" type="submit">Gửi thông tin</button>
-                          <a class="form-button" onclick="showRecovery()">Hủy</a>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+                            <label>Email:
+                                <span>*</span>
+                            </label>
+                            <input type="email" class="form-text" name="Email" required="">
+                            <button class="form-button" type="submit">Gửi thông tin</button>
+                            <a class="form-button" onclick="showRecovery()">Hủy</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

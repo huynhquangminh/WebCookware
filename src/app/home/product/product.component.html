@@ -47,7 +47,7 @@
                                         <a class="product-item-add" href="javascript:void(0)" onclick="Bizweb.addItem(2185011, 1, cartItem)">
                                             <i class="fa fa-shopping-cart "></i>
                                         </a>
-                                        <a class="product-item-view" [routerLink]="['../product-detail',item.ID]">
+                                        <a class="product-item-view" [routerLink]="['../../product-detail',item.ID]">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </div>
@@ -76,7 +76,7 @@
                                                 <a class="product-item-add" href="javascript:void(0)" onclick="Bizweb.addItem(2185016, 1, cartItem)">
                                                     <i class="fa fa-shopping-cart "></i>
                                                 </a>
-                                                <a class="product-item-view" [routerLink]="['../product-detail',item.ID]">
+                                                <a class="product-item-view" [routerLink]="['../../product-detail',item.ID]">
                                                     <i class="fa fa-search"></i>
                                                 </a>
                                             </div>
@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                                     <h3 class="product-item-name">
-                                        <a [routerLink]="['../product-detail',item.ID]">{{item.NameProduct}}</a>
+                                        <a [routerLink]="['../../product-detail',item.ID]">{{item.NameProduct}}</a>
                                     </h3>
                                     <p class="product-item-price" *ngIf="item.Price">{{item.Price}}đ</p>
                                     <p class="product-item-price-sale" *ngIf="item.PriceSale">{{item.PriceSale}}đ</p>

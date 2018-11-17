@@ -1,0 +1,55 @@
+<section class="bread-crumb">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <ul class="breadcrumb">
+                  <li>
+                      <a href="/">Trang chủ</a>
+                  </li>
+                  <li class="active">Tất cả sản phẩm bạn tìm kiếm </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="category">
+  <div class="container">
+      <div class="row">
+          <!-- left menu  -->
+          <app-leftmenu></app-leftmenu>
+          <!-- left menu -->
+          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+              <div class="heading">
+                  <h1>Tất cả sản phẩm</h1>
+              </div>
+              <!-- product fomart Grid -->
+              <div class="row category-grid" *ngIf="listProductSearch">
+                    <h4 *ngIf = "listProductSearch.length === 0" >*****Không tìm thấy sản phẩm nào*****</h4>
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" *ngFor="let item of listProductSearch">
+                      <div class="product-item">
+                          <div class="product-item-thumbnail">
+                              <div class="product-item-background">
+                                  <div class="product-item-button">
+                                      <a class="product-item-add" href="javascript:void(0)" onclick="Bizweb.addItem(2185011, 1, cartItem)">
+                                          <i class="fa fa-shopping-cart "></i>
+                                      </a>
+                                      <a class="product-item-view" [routerLink]="['../../product-detail',item.ID]">
+                                          <i class="fa fa-search"></i>
+                                      </a>
+                                  </div>
+                              </div>
+                              <img class="img-responsive" src="../../../assets/image/products/{{item.ImageProduct}}" alt="{{item.NameProduct}}">
+                          </div>
+                          <h3 class="product-item-name">
+                              <a [routerLink]="['../../product-detail',item.ID]">{{item.NameProduct}}</a>
+                          </h3>
+                          <p class="product-item-price" *ngIf="item.Price">{{item.Price}}đ</p>
+                          <p class="product-item-price-sale" *ngIf="!item.PriceSale">0đ</p>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

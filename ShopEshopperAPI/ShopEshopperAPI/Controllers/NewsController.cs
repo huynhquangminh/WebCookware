@@ -16,6 +16,18 @@ namespace ShopEshopperAPI.Controllers
         }
 
         /// <summary>
+        /// GetNewsAll
+        /// </summary>
+        /// <returns>IHttpActionResult</returns>
+        [HttpPost]
+        public IHttpActionResult GetNewsAll()
+        {
+            var result = _businessLogic.GetNewsAll();
+            return new ActionResult<GetNewsAllResponse>(result.Result, Request);
+        }
+
+
+        /// <summary>
         /// GetListNewsAll
         /// </summary>
         /// <returns>IHttpActionResult</returns>

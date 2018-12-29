@@ -394,5 +394,10 @@ namespace EntityData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_CUSTOMER", iDParameter, telephoneParameter, userNameParameter, passwordParameter, nameCustomerParameter, roleIDParameter);
         }
+    
+        public virtual ObjectResult<GET_NEWS_ALL_Result> GET_NEWS_ALL()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_NEWS_ALL_Result>("GET_NEWS_ALL");
+        }
     }
 }

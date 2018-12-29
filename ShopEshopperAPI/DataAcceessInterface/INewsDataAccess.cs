@@ -1,11 +1,12 @@
 ﻿using DataAcceessInterface.Parameter;
 using EntityData;
 using System.Collections.Generic;
-
 namespace DataAcceessInterface
 {
     public interface INewsDataAccess
     {
+        IEnumerable<GET_NEWS_ALL_Result> GetAllNews();
+
         IEnumerable<GETNEWS_BY_DATE_Result> GetListNewsByDate();
 
         IEnumerable<GETNEWS_BY_VIEW_Result> GetListNewsByView();

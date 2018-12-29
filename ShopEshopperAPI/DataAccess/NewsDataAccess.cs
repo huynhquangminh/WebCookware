@@ -11,6 +11,14 @@ namespace DataAccess
         private readonly ConnectionStringDBShop db = new ConnectionStringDBShop();
 
         /// <summary>
+        /// GetAllNews
+        /// </summary>
+        /// <returns>GET_NEWS_ALL_Result</returns>
+        public IEnumerable<GET_NEWS_ALL_Result> GetAllNews()
+        {
+            return db.GET_NEWS_ALL();
+        }
+        /// <summary>
         /// GetListNewsByDate
         /// </summary>
         /// <returns>GETNEWS_BY_DATE_Result</returns>

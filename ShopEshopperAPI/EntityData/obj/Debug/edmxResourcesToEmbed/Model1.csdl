@@ -282,6 +282,7 @@
       <Parameter Name="NameCustomer" Mode="In" Type="String" />
       <Parameter Name="RoleID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="GET_NEWS_ALL" ReturnType="Collection(CookwareDBModel.GET_NEWS_ALL_Result)" />
   </EntityContainer>
   <ComplexType Name="FIND_PRODUCT_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -467,5 +468,15 @@
     <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="NameCustomer" Nullable="false" MaxLength="100" />
     <Property Type="Int32" Name="RoleId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_NEWS_ALL_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NameNews" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IDCreater" Nullable="true" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="String" Name="ImageNews" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="ImageNewDetail" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="ViewMax" Nullable="true" />
+    <Property Type="String" Name="DescriptionNews" Nullable="false" />
   </ComplexType>
 </Schema>

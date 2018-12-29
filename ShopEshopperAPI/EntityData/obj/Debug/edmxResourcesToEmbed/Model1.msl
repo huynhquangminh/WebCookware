@@ -391,5 +391,19 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="INSERT_CUSTOMER" FunctionName="CookwareDBModel.Store.INSERT_CUSTOMER" />
     <FunctionImportMapping FunctionImportName="UPDATE_CUSTOMER" FunctionName="CookwareDBModel.Store.UPDATE_CUSTOMER" />
+    <FunctionImportMapping FunctionImportName="GET_NEWS_ALL" FunctionName="CookwareDBModel.Store.GET_NEWS_ALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CookwareDBModel.GET_NEWS_ALL_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameNews" ColumnName="NameNews" />
+          <ScalarProperty Name="IDCreater" ColumnName="IDCreater" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ImageNews" ColumnName="ImageNews" />
+          <ScalarProperty Name="ImageNewDetail" ColumnName="ImageNewDetail" />
+          <ScalarProperty Name="ViewMax" ColumnName="ViewMax" />
+          <ScalarProperty Name="DescriptionNews" ColumnName="DescriptionNews" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -35,11 +35,37 @@ namespace BusinessLogic
                 cfg.CreateMap<GETNEWS_BY_DATE_Result, GetListNewsDto>();
                 cfg.CreateMap<GETNEWS_BY_VIEW_Result, GetListNewsDto>();
                 cfg.CreateMap<GETNEWSDETAIL_Result, GetNewsDetailDto>();
-                
+                cfg.CreateMap<GET_NEWS_ALL_Result, GetNewsAllDto>();
+
             });
             mapper = configMap.CreateMapper();
         }
 
+        /// <summary>
+        /// GetNewsAll
+        /// </summary>
+        /// <returns>GetNewsAllResponse</returns>
+        public async Task<GetNewsAllResponse> GetNewsAll()
+        {
+            var response = new GetNewsAllResponse();
+            try
+            {
+                var result = _dataAccess.GetAllNews();
+               
+                if (result != null )
+                {
+                    response.listNewsAll = MapList<GET_NEWS_ALL_Result, GetNewsAllDto>(result.ToList());
+                  
+                    response.Success = true;
+                }
+
+            }
+            catch (Exception)
+            {
+                response.Success = false;
+            }
+            return await Task.FromResult(response);
+        }
         /// <summary>
         /// GetListNewsAll
         /// </summary>

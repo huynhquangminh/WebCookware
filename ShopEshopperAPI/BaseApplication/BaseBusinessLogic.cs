@@ -1,5 +1,9 @@
 ﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
 
 namespace BaseApplication
 {
@@ -24,5 +28,6 @@ namespace BaseApplication
             }
             return mappedEntities;
         }
+       
     }
 }

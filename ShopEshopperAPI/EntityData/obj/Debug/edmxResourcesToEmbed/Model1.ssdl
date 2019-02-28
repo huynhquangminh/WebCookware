@@ -68,7 +68,6 @@
     <Property Name="PriceSale" Type="decimal" Precision="18" Scale="2" />
     <Property Name="InterestProduct" Type="int" />
     <Property Name="SellMax" Type="int" />
-    <Property Name="DeletePro" Type="bit" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -174,6 +173,9 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
   <Function Name="DELETE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
   </Function>
+  <Function Name="DETELET_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
   <Function Name="EDIT_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
     <Parameter Name="NameCategory" Type="nvarchar" Mode="In" />
@@ -200,6 +202,9 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
   <Function Name="GET_LIST_CUSTOMERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="GET_LIST_ROLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="GET_LIST_SLIDER_IMG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GET_LISTPRODUCT_ALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PAGE" Type="int" Mode="In" />
+  </Function>
   <Function Name="GET_NEWS_ALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="GET_PRODUCT_BY_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IDCategory" Type="int" Mode="In" />
@@ -237,6 +242,20 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
     <Parameter Name="NameCustomer" Type="nvarchar" Mode="In" />
     <Parameter Name="RoleID" Type="int" Mode="In" />
   </Function>
+  <Function Name="INSERT_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NameProduct" Type="nvarchar" Mode="In" />
+    <Parameter Name="Price" Type="decimal" Mode="In" />
+    <Parameter Name="BriefDes" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ImageProduct" Type="varchar" Mode="In" />
+    <Parameter Name="ImageProductDetail1" Type="varchar" Mode="In" />
+    <Parameter Name="ImageProductDetail2" Type="varchar" Mode="In" />
+    <Parameter Name="Amount" Type="int" Mode="In" />
+    <Parameter Name="IDCategory" Type="int" Mode="In" />
+    <Parameter Name="PriceSale" Type="decimal" Mode="In" />
+    <Parameter Name="InterestProduct" Type="int" Mode="In" />
+    <Parameter Name="SellMax" Type="int" Mode="In" />
+  </Function>
   <Function Name="INSERT_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ROLENAME" Type="nvarchar" Mode="In" />
   </Function>
@@ -247,6 +266,21 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
     <Parameter Name="Password" Type="varchar" Mode="In" />
     <Parameter Name="NameCustomer" Type="nvarchar" Mode="In" />
     <Parameter Name="RoleID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UPDATE_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="NameProduct" Type="nvarchar" Mode="In" />
+    <Parameter Name="Price" Type="decimal" Mode="In" />
+    <Parameter Name="BriefDes" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ImageProduct" Type="varchar" Mode="In" />
+    <Parameter Name="ImageProductDetail1" Type="varchar" Mode="In" />
+    <Parameter Name="ImageProductDetail2" Type="varchar" Mode="In" />
+    <Parameter Name="Amount" Type="int" Mode="In" />
+    <Parameter Name="IDCategory" Type="int" Mode="In" />
+    <Parameter Name="PriceSale" Type="decimal" Mode="In" />
+    <Parameter Name="InterestProduct" Type="int" Mode="In" />
+    <Parameter Name="SellMax" Type="int" Mode="In" />
   </Function>
   <Function Name="UPDATE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />

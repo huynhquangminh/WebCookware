@@ -34,7 +34,6 @@ namespace EntityData
         public Nullable<decimal> PriceSale { get; set; }
         public Nullable<int> InterestProduct { get; set; }
         public Nullable<int> SellMax { get; set; }
-        public Nullable<bool> DeletePro { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

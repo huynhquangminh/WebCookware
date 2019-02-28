@@ -16,5 +16,13 @@ namespace BusinessLogicInterface
 
         Task<FindProductResponse> FindProductByKey(FindProductRequest request);
 
+        Task<GetListProductAdminResponse> GetListProductAdmin(GetProductAllRequest request);
+
+        Task<bool> InsertProduct(InsertProductRequest request);
+
+        Task<bool> UpdateProduct(UpdateProductRequest request);
+
+        Task<bool> DeleteProduct(DeleteProductRequest request);
+
     }
 }

@@ -73,7 +73,6 @@
           <Property Name="PriceSale" Type="decimal" Precision="18" Scale="2" />
           <Property Name="InterestProduct" Type="int" />
           <Property Name="SellMax" Type="int" />
-          <Property Name="DeletePro" Type="bit" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -179,6 +178,9 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="DELETE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
+        <Function Name="DETELET_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
         <Function Name="EDIT_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
           <Parameter Name="NameCategory" Type="nvarchar" Mode="In" />
@@ -205,6 +207,9 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
         <Function Name="GET_LIST_CUSTOMERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_ROLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_LIST_SLIDER_IMG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GET_LISTPRODUCT_ALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PAGE" Type="int" Mode="In" />
+        </Function>
         <Function Name="GET_NEWS_ALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GET_PRODUCT_BY_CATEGORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IDCategory" Type="int" Mode="In" />
@@ -242,6 +247,20 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Parameter Name="NameCustomer" Type="nvarchar" Mode="In" />
           <Parameter Name="RoleID" Type="int" Mode="In" />
         </Function>
+        <Function Name="INSERT_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NameProduct" Type="nvarchar" Mode="In" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="BriefDes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ImageProduct" Type="varchar" Mode="In" />
+          <Parameter Name="ImageProductDetail1" Type="varchar" Mode="In" />
+          <Parameter Name="ImageProductDetail2" Type="varchar" Mode="In" />
+          <Parameter Name="Amount" Type="int" Mode="In" />
+          <Parameter Name="IDCategory" Type="int" Mode="In" />
+          <Parameter Name="PriceSale" Type="decimal" Mode="In" />
+          <Parameter Name="InterestProduct" Type="int" Mode="In" />
+          <Parameter Name="SellMax" Type="int" Mode="In" />
+        </Function>
         <Function Name="INSERT_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ROLENAME" Type="nvarchar" Mode="In" />
         </Function>
@@ -252,6 +271,21 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Parameter Name="Password" Type="varchar" Mode="In" />
           <Parameter Name="NameCustomer" Type="nvarchar" Mode="In" />
           <Parameter Name="RoleID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UPDATE_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="NameProduct" Type="nvarchar" Mode="In" />
+          <Parameter Name="Price" Type="decimal" Mode="In" />
+          <Parameter Name="BriefDes" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ImageProduct" Type="varchar" Mode="In" />
+          <Parameter Name="ImageProductDetail1" Type="varchar" Mode="In" />
+          <Parameter Name="ImageProductDetail2" Type="varchar" Mode="In" />
+          <Parameter Name="Amount" Type="int" Mode="In" />
+          <Parameter Name="IDCategory" Type="int" Mode="In" />
+          <Parameter Name="PriceSale" Type="decimal" Mode="In" />
+          <Parameter Name="InterestProduct" Type="int" Mode="In" />
+          <Parameter Name="SellMax" Type="int" Mode="In" />
         </Function>
         <Function Name="UPDATE_ROLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
@@ -368,7 +402,6 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Property Name="PriceSale" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="InterestProduct" Type="Int32" />
           <Property Name="SellMax" Type="Int32" />
-          <Property Name="DeletePro" Type="Boolean" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Headers" Relationship="Self.FK_Header_Product" FromRole="Product" ToRole="Header" />
         </EntityType>
@@ -578,6 +611,41 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
             <Parameter Name="RoleID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GET_NEWS_ALL" ReturnType="Collection(CookwareDBModel.GET_NEWS_ALL_Result)" />
+          <FunctionImport Name="DETELET_PRODUCT">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GET_LISTPRODUCT_ALL" ReturnType="Collection(CookwareDBModel.GET_LISTPRODUCT_ALL_Result)">
+          <Parameter Name="PAGE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="INSERT_PRODUCT">
+            <Parameter Name="NameProduct" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="BriefDes" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="ImageProduct" Mode="In" Type="String" />
+            <Parameter Name="ImageProductDetail1" Mode="In" Type="String" />
+            <Parameter Name="ImageProductDetail2" Mode="In" Type="String" />
+            <Parameter Name="Amount" Mode="In" Type="Int32" />
+            <Parameter Name="IDCategory" Mode="In" Type="Int32" />
+            <Parameter Name="PriceSale" Mode="In" Type="Decimal" />
+            <Parameter Name="InterestProduct" Mode="In" Type="Int32" />
+            <Parameter Name="SellMax" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_PRODUCT">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="NameProduct" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="BriefDes" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="ImageProduct" Mode="In" Type="String" />
+            <Parameter Name="ImageProductDetail1" Mode="In" Type="String" />
+            <Parameter Name="ImageProductDetail2" Mode="In" Type="String" />
+            <Parameter Name="Amount" Mode="In" Type="Int32" />
+            <Parameter Name="IDCategory" Mode="In" Type="Int32" />
+            <Parameter Name="PriceSale" Mode="In" Type="Decimal" />
+            <Parameter Name="InterestProduct" Mode="In" Type="Int32" />
+            <Parameter Name="SellMax" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="FIND_PRODUCT_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -774,6 +842,22 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Property Type="Int32" Name="ViewMax" Nullable="true" />
           <Property Type="String" Name="DescriptionNews" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="GET_LISTPRODUCT_ALL_Result">
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NameProduct" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="BriefDes" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="String" Name="ImageProduct" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="ImageProductDetail1" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ImageProductDetail2" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Amount" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Int32" Name="IDCategory" Nullable="true" />
+          <Property Type="Decimal" Name="PriceSale" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="InterestProduct" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -852,7 +936,6 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
                 <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
                 <ScalarProperty Name="InterestProduct" ColumnName="InterestProduct" />
                 <ScalarProperty Name="SellMax" ColumnName="SellMax" />
-                <ScalarProperty Name="DeletePro" ColumnName="DeletePro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1184,6 +1267,29 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DETELET_PRODUCT" FunctionName="CookwareDBModel.Store.DETELET_PRODUCT" />
+          <FunctionImportMapping FunctionImportName="GET_LISTPRODUCT_ALL" FunctionName="CookwareDBModel.Store.GET_LISTPRODUCT_ALL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CookwareDBModel.GET_LISTPRODUCT_ALL_Result">
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="BriefDes" ColumnName="BriefDes" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImageProduct" ColumnName="ImageProduct" />
+                <ScalarProperty Name="ImageProductDetail1" ColumnName="ImageProductDetail1" />
+                <ScalarProperty Name="ImageProductDetail2" ColumnName="ImageProductDetail2" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IDCategory" ColumnName="IDCategory" />
+                <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+                <ScalarProperty Name="InterestProduct" ColumnName="InterestProduct" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="INSERT_PRODUCT" FunctionName="CookwareDBModel.Store.INSERT_PRODUCT" />
+          <FunctionImportMapping FunctionImportName="UPDATE_PRODUCT" FunctionName="CookwareDBModel.Store.UPDATE_PRODUCT" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

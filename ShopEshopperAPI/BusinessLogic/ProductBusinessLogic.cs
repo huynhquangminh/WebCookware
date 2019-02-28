@@ -8,6 +8,7 @@ using DataAcceessInterface;
 using DataAcceessInterface.Parameter;
 using EntityData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,10 +17,12 @@ namespace BusinessLogic
     public class ProductBusinessLogic : BaseBusinessLogic, IProductBusinessLogic
     {
         private readonly IProductDataAccess _dataAccess;
+        private readonly ICategoryDataAccess _dataAccessCategory;
 
-        public ProductBusinessLogic(IProductDataAccess dataAccess)
+        public ProductBusinessLogic(IProductDataAccess dataAccess, ICategoryDataAccess dataAccessCategory)
         {
             _dataAccess = dataAccess;
+            _dataAccessCategory = dataAccessCategory;
             ConfigAutoMapper();
         }
 
@@ -42,6 +45,8 @@ namespace BusinessLogic
                 cfg.CreateMap<GETPRODUCT_BY_TYPE_PRICE_DESC_Result, GetProductAllDto>();
                 cfg.CreateMap<GETPRODUCT_BY_TYPE_DATE_ASC_Result, GetProductAllDto>();
                 cfg.CreateMap<FIND_PRODUCT_Result, FindProductDto>();
+                cfg.CreateMap<GET_LISTPRODUCT_ALL_Result, GetListProductAdminDto>();
+                cfg.CreateMap<GETLISTCATEGORY_Result, GetCategoryDto>();
             });
             mapper = configMap.CreateMapper();
         }
@@ -81,7 +86,7 @@ namespace BusinessLogic
                 }
 
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -110,7 +115,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -140,7 +145,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -159,7 +164,7 @@ namespace BusinessLogic
             {
                 var param = new FindProductParameter()
                 {
-                 key = request.key
+                    key = request.key
                 };
 
                 var result = _dataAccess.FindProduct(param);
@@ -169,7 +174,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -211,6 +216,152 @@ namespace BusinessLogic
             return await Task.FromResult(response);
         }
 
+        /// <summary>
+        /// GetListProductAdmin
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>GetListProductAdminResponse</returns>
+        public async Task<GetListProductAdminResponse> GetListProductAdmin(GetProductAllRequest request)
+        {
+            var response = new GetListProductAdminResponse() {
+                ListCategory = new List<GetCategoryDto>
+                {
+                    new GetCategoryDto()
+                },
+
+                ListProductAdmin = new List<GetListProductAdminDto>
+                {
+                    new GetListProductAdminDto()
+                }
+            };
+            try
+            {
+                var param = new GetProductAllParameter()
+                {
+                    StartPage = request.StartPage,
+                };
+                var result = _dataAccess.GetListProductAdmin(param);
+                var resultCategory = _dataAccessCategory.GetListCategory();
+                if (result != null && resultCategory != null)
+                {
+                    response.ListProductAdmin = MapList<GET_LISTPRODUCT_ALL_Result, GetListProductAdminDto>(result.ToList());
+                    response.ListCategory = MapList<GETLISTCATEGORY_Result, GetCategoryDto>(resultCategory.ToList());
+                    response.Success = true;
+                }
+
+                return await Task.FromResult(response);
+            }
+            catch (Exception)
+            {
+                response.Success = false;
+                return await Task.FromResult(response);
+            }
+        }
+
+        /// <summary>
+        /// InsertProduct
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>bool</returns>
+        public async Task<bool> InsertProduct(InsertProductRequest request)
+        {
+            bool result = false;
+            try
+            {
+                var param = new InsertProductParameter()
+                {
+                    NameProduct = request.NameProduct,
+                    Price = request.Price,
+                    BriefDes = request.BriefDes,
+                    Description = request.Description,
+                    ImageProduct = request.ImageProduct,
+                    ImageProductDetail1 = request.ImageProductDetail1,
+                    ImageProductDetail2 = request.ImageProductDetail2,
+                    Amount = request.Amount,
+                    IDCategory = request.IDCategory,
+                    PriceSale = request.PriceSale,
+                    InterestProduct = request.InterestProduct,
+                    SellMax = request.SellMax
+
+                };
+                _dataAccess.InsertProduct(param);
+                result = true;
+                return await Task.FromResult(result);
+
+            }
+            catch (Exception)
+            {
+                result = false;
+                return await Task.FromResult(result);
+            }
+        }
+
+        /// <summary>
+        /// UpdateProduct
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>bool</returns>
+        public async Task<bool> UpdateProduct(UpdateProductRequest request)
+        {
+            bool result = false;
+            try
+            {
+                var param = new UpdateProductParameter()
+                {
+                    ID = request.ID,
+                    NameProduct = request.NameProduct,
+                    Price = request.Price,
+                    BriefDes = request.BriefDes,
+                    Description = request.Description,
+                    ImageProduct = request.ImageProduct,
+                    ImageProductDetail1 = request.ImageProductDetail1,
+                    ImageProductDetail2 = request.ImageProductDetail2,
+                    Amount = request.Amount,
+                    IDCategory = request.IDCategory,
+                    PriceSale = request.PriceSale,
+                    InterestProduct = request.InterestProduct,
+                    SellMax = request.SellMax
+
+                };
+                _dataAccess.UpdateProduct(param);
+                result = true;
+                return await Task.FromResult(result);
+
+            }
+            catch (Exception)
+            {
+                result = false;
+                return await Task.FromResult(result);
+            }
+        }
+
+        /// <summary>
+        /// DeleteProduct
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>bool</returns>
+        public async Task<bool> DeleteProduct(DeleteProductRequest request)
+        {
+            bool result = false;
+            try
+            {
+                var param = new DeleteProductParameter()
+                {
+                    id = request.ID,
+
+                };
+                _dataAccess.DeleteProduct(param);
+                result = true;
+                return await Task.FromResult(result);
+
+            }
+            catch (Exception)
+            {
+                result = false;
+                return await Task.FromResult(result);
+            }
+        }
+
         private GetProductAllResponse CheckTypeByPriceASC(GetProductAllParameter param)
         {
             var response = new GetProductAllResponse();
@@ -223,7 +374,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -242,7 +393,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -261,7 +412,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }
@@ -280,7 +431,7 @@ namespace BusinessLogic
                     response.Success = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 response.Success = false;
             }

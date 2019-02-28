@@ -399,5 +399,133 @@ namespace EntityData
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_NEWS_ALL_Result>("GET_NEWS_ALL");
         }
+    
+        public virtual int DETELET_PRODUCT(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DETELET_PRODUCT", iDParameter);
+        }
+    
+        public virtual ObjectResult<GET_LISTPRODUCT_ALL_Result> GET_LISTPRODUCT_ALL(Nullable<int> pAGE)
+        {
+            var pAGEParameter = pAGE.HasValue ?
+                new ObjectParameter("PAGE", pAGE) :
+                new ObjectParameter("PAGE", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GET_LISTPRODUCT_ALL_Result>("GET_LISTPRODUCT_ALL", pAGEParameter);
+        }
+    
+        public virtual int INSERT_PRODUCT(string nameProduct, Nullable<decimal> price, string briefDes, string description, string imageProduct, string imageProductDetail1, string imageProductDetail2, Nullable<int> amount, Nullable<int> iDCategory, Nullable<decimal> priceSale, Nullable<int> interestProduct, Nullable<int> sellMax)
+        {
+            var nameProductParameter = nameProduct != null ?
+                new ObjectParameter("NameProduct", nameProduct) :
+                new ObjectParameter("NameProduct", typeof(string));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("Price", price) :
+                new ObjectParameter("Price", typeof(decimal));
+    
+            var briefDesParameter = briefDes != null ?
+                new ObjectParameter("BriefDes", briefDes) :
+                new ObjectParameter("BriefDes", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var imageProductParameter = imageProduct != null ?
+                new ObjectParameter("ImageProduct", imageProduct) :
+                new ObjectParameter("ImageProduct", typeof(string));
+    
+            var imageProductDetail1Parameter = imageProductDetail1 != null ?
+                new ObjectParameter("ImageProductDetail1", imageProductDetail1) :
+                new ObjectParameter("ImageProductDetail1", typeof(string));
+    
+            var imageProductDetail2Parameter = imageProductDetail2 != null ?
+                new ObjectParameter("ImageProductDetail2", imageProductDetail2) :
+                new ObjectParameter("ImageProductDetail2", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("Amount", amount) :
+                new ObjectParameter("Amount", typeof(int));
+    
+            var iDCategoryParameter = iDCategory.HasValue ?
+                new ObjectParameter("IDCategory", iDCategory) :
+                new ObjectParameter("IDCategory", typeof(int));
+    
+            var priceSaleParameter = priceSale.HasValue ?
+                new ObjectParameter("PriceSale", priceSale) :
+                new ObjectParameter("PriceSale", typeof(decimal));
+    
+            var interestProductParameter = interestProduct.HasValue ?
+                new ObjectParameter("InterestProduct", interestProduct) :
+                new ObjectParameter("InterestProduct", typeof(int));
+    
+            var sellMaxParameter = sellMax.HasValue ?
+                new ObjectParameter("SellMax", sellMax) :
+                new ObjectParameter("SellMax", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_PRODUCT", nameProductParameter, priceParameter, briefDesParameter, descriptionParameter, imageProductParameter, imageProductDetail1Parameter, imageProductDetail2Parameter, amountParameter, iDCategoryParameter, priceSaleParameter, interestProductParameter, sellMaxParameter);
+        }
+    
+        public virtual int UPDATE_PRODUCT(Nullable<int> iD, string nameProduct, Nullable<decimal> price, string briefDes, string description, string imageProduct, string imageProductDetail1, string imageProductDetail2, Nullable<int> amount, Nullable<int> iDCategory, Nullable<decimal> priceSale, Nullable<int> interestProduct, Nullable<int> sellMax)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var nameProductParameter = nameProduct != null ?
+                new ObjectParameter("NameProduct", nameProduct) :
+                new ObjectParameter("NameProduct", typeof(string));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("Price", price) :
+                new ObjectParameter("Price", typeof(decimal));
+    
+            var briefDesParameter = briefDes != null ?
+                new ObjectParameter("BriefDes", briefDes) :
+                new ObjectParameter("BriefDes", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var imageProductParameter = imageProduct != null ?
+                new ObjectParameter("ImageProduct", imageProduct) :
+                new ObjectParameter("ImageProduct", typeof(string));
+    
+            var imageProductDetail1Parameter = imageProductDetail1 != null ?
+                new ObjectParameter("ImageProductDetail1", imageProductDetail1) :
+                new ObjectParameter("ImageProductDetail1", typeof(string));
+    
+            var imageProductDetail2Parameter = imageProductDetail2 != null ?
+                new ObjectParameter("ImageProductDetail2", imageProductDetail2) :
+                new ObjectParameter("ImageProductDetail2", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("Amount", amount) :
+                new ObjectParameter("Amount", typeof(int));
+    
+            var iDCategoryParameter = iDCategory.HasValue ?
+                new ObjectParameter("IDCategory", iDCategory) :
+                new ObjectParameter("IDCategory", typeof(int));
+    
+            var priceSaleParameter = priceSale.HasValue ?
+                new ObjectParameter("PriceSale", priceSale) :
+                new ObjectParameter("PriceSale", typeof(decimal));
+    
+            var interestProductParameter = interestProduct.HasValue ?
+                new ObjectParameter("InterestProduct", interestProduct) :
+                new ObjectParameter("InterestProduct", typeof(int));
+    
+            var sellMaxParameter = sellMax.HasValue ?
+                new ObjectParameter("SellMax", sellMax) :
+                new ObjectParameter("SellMax", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_PRODUCT", iDParameter, nameProductParameter, priceParameter, briefDesParameter, descriptionParameter, imageProductParameter, imageProductDetail1Parameter, imageProductDetail2Parameter, amountParameter, iDCategoryParameter, priceSaleParameter, interestProductParameter, sellMaxParameter);
+        }
     }
 }

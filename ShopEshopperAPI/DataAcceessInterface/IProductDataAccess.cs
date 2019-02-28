@@ -28,5 +28,15 @@ namespace DataAcceessInterface
 
         IEnumerable<FIND_PRODUCT_Result> FindProduct(FindProductParameter param);
 
+        IEnumerable<GET_LISTPRODUCT_ALL_Result> GetListProductAdmin(GetProductAllParameter param);
+
+        void InsertProduct(InsertProductParameter param);
+
+        void UpdateProduct(UpdateProductParameter param);
+
+        void DeleteProduct(DeleteProductParameter param);
+
+
+
     }
 }

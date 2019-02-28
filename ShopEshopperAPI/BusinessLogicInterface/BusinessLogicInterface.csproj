@@ -93,6 +93,7 @@
     <Compile Include="Dtos\GetIntroductionDto.cs" />
     <Compile Include="Dtos\GetListHeaderDto.cs" />
     <Compile Include="Dtos\GetListNewsDto.cs" />
+    <Compile Include="Dtos\GetListProductAdminDto.cs" />
     <Compile Include="Dtos\GetNewsAllDto.cs" />
     <Compile Include="Dtos\GetNewsDetailDto.cs" />
     <Compile Include="Dtos\GetProductAllDto.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Requests\Add_NewsRequest.cs" />
     <Compile Include="Requests\DeleteCategoryRequest.cs" />
     <Compile Include="Requests\DeleteCustomerRequest.cs" />
+    <Compile Include="Requests\DeleteProductRequest.cs" />
     <Compile Include="Requests\Delete_NewsRequest.cs" />
     <Compile Include="Requests\EditCategoryRequest.cs" />
     <Compile Include="Requests\Edit_NewsRequest.cs" />
@@ -124,9 +126,11 @@
     <Compile Include="Requests\GetProductAllRequest.cs" />
     <Compile Include="Requests\GetProductByCategoryRequest.cs" />
     <Compile Include="Requests\InsertCustomerRequest.cs" />
+    <Compile Include="Requests\InsertProductRequest.cs" />
     <Compile Include="Requests\ProductDetailRequest.cs" />
     <Compile Include="Requests\SendMailCommentCustomerRequest.cs" />
     <Compile Include="Requests\UpdateCustomerRequest.cs" />
+    <Compile Include="Requests\UpdateProductRequest.cs" />
     <Compile Include="Response\FindProductResponse.cs" />
     <Compile Include="Response\GetBrandResponse.cs" />
     <Compile Include="Response\GetCategoryResponse.cs" />
@@ -135,6 +139,7 @@
     <Compile Include="Response\GetListCustomerResponse.cs" />
     <Compile Include="Response\GetListHeaderResponse.cs" />
     <Compile Include="Response\GetListNewsAllResponse.cs" />
+    <Compile Include="Response\GetListProductAdminResponse.cs" />
     <Compile Include="Response\GetNewsAllResponse.cs" />
     <Compile Include="Response\GetNewsDetailResponse.cs" />
     <Compile Include="Response\GetProductAllResponse.cs" />

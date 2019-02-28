@@ -96,15 +96,18 @@
     <Compile Include="Parameter\DeleteCategoryParameter.cs" />
     <Compile Include="Parameter\DeleteCustomerPrameter.cs" />
     <Compile Include="Parameter\DeleteNewsParameter.cs" />
+    <Compile Include="Parameter\DeleteProductParameter.cs" />
     <Compile Include="Parameter\DeleteRoleParameter.cs" />
     <Compile Include="Parameter\EditNewsParameter.cs" />
     <Compile Include="Parameter\FindProductParameter.cs" />
     <Compile Include="Parameter\GetNewsDetailParameter.cs" />
     <Compile Include="Parameter\GetProductAllParameter.cs" />
     <Compile Include="Parameter\GetProductByCategoryParameter.cs" />
+    <Compile Include="Parameter\InsertProductParameter.cs" />
     <Compile Include="Parameter\ProductDetailByIDParameter.cs" />
     <Compile Include="Parameter\UpdateCategoryParameter.cs" />
     <Compile Include="Parameter\UpdateCustomerParameter.cs" />
+    <Compile Include="Parameter\UpdateProductParameter.cs" />
     <Compile Include="Parameter\UpdateRoleParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -73,7 +73,6 @@
           <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
           <ScalarProperty Name="InterestProduct" ColumnName="InterestProduct" />
           <ScalarProperty Name="SellMax" ColumnName="SellMax" />
-          <ScalarProperty Name="DeletePro" ColumnName="DeletePro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -405,5 +404,28 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DETELET_PRODUCT" FunctionName="CookwareDBModel.Store.DETELET_PRODUCT" />
+    <FunctionImportMapping FunctionImportName="GET_LISTPRODUCT_ALL" FunctionName="CookwareDBModel.Store.GET_LISTPRODUCT_ALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CookwareDBModel.GET_LISTPRODUCT_ALL_Result">
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="BriefDes" ColumnName="BriefDes" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImageProduct" ColumnName="ImageProduct" />
+          <ScalarProperty Name="ImageProductDetail1" ColumnName="ImageProductDetail1" />
+          <ScalarProperty Name="ImageProductDetail2" ColumnName="ImageProductDetail2" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IDCategory" ColumnName="IDCategory" />
+          <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+          <ScalarProperty Name="InterestProduct" ColumnName="InterestProduct" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="INSERT_PRODUCT" FunctionName="CookwareDBModel.Store.INSERT_PRODUCT" />
+    <FunctionImportMapping FunctionImportName="UPDATE_PRODUCT" FunctionName="CookwareDBModel.Store.UPDATE_PRODUCT" />
   </EntityContainerMapping>
 </Mapping>

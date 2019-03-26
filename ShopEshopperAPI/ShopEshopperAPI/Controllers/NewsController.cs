@@ -16,7 +16,7 @@ namespace ShopEshopperAPI.Controllers
         }
 
         /// <summary>
-        /// GetNewsAll
+        /// GetNewsAll for admin
         /// </summary>
         /// <returns>IHttpActionResult</returns>
         [HttpPost]
@@ -28,7 +28,7 @@ namespace ShopEshopperAPI.Controllers
 
 
         /// <summary>
-        /// GetListNewsAll
+        /// GetListNewsAll For Index
         /// </summary>
         /// <returns>IHttpActionResult</returns>
         [HttpPost]
@@ -51,36 +51,36 @@ namespace ShopEshopperAPI.Controllers
         }
 
         /// <summary>
-        /// GetNewsDetail
+        /// Insert News
         /// </summary>
         /// <param name="RequestData">GetNewsDetailRequest</param>
         /// <returns>IHttpActionResult</returns>
         [HttpPost]
-        public IHttpActionResult AddNews(Add_NewsRequest RequestData)
+        public IHttpActionResult AddNews(AddNewsRequest RequestData)
         {
             var result = _businessLogic.Add_News(RequestData);
             return new ActionResult<bool>(result.Result, Request);
         }
 
         /// <summary>
-        /// GetNewsDetail
+        /// update news
         /// </summary>
-        /// <param name="RequestData">GetNewsDetailRequest</param>
+        /// <param name="RequestData">Edit_NewsRequest</param>
         /// <returns>IHttpActionResult</returns>
         [HttpPost]
-        public IHttpActionResult EditNews(Edit_NewsRequest RequestData)
+        public IHttpActionResult EditNews(EditNewsRequest RequestData)
         {
             var result = _businessLogic.Edit_News(RequestData);
             return new ActionResult<bool>(result.Result, Request);
         }
 
         /// <summary>
-        /// GetNewsDetail
+        /// detele news
         /// </summary>
-        /// <param name="RequestData">GetNewsDetailRequest</param>
+        /// <param name="RequestData">Delete_NewsRequest</param>
         /// <returns>IHttpActionResult</returns>
         [HttpPost]
-        public IHttpActionResult DeleteNews(Delete_NewsRequest RequestData)
+        public IHttpActionResult DeleteNews(DeleteNewsRequest RequestData)
         {
             var result = _businessLogic.Delete_News(RequestData);
             return new ActionResult<bool>(result.Result, Request);

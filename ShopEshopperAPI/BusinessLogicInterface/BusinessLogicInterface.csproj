@@ -114,13 +114,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\AddCategoryRequest.cs" />
     <Compile Include="Requests\ActionRoleRequest.cs" />
-    <Compile Include="Requests\Add_NewsRequest.cs" />
+    <Compile Include="Requests\AddNewsRequest.cs" />
     <Compile Include="Requests\DeleteCategoryRequest.cs" />
     <Compile Include="Requests\DeleteCustomerRequest.cs" />
     <Compile Include="Requests\DeleteProductRequest.cs" />
-    <Compile Include="Requests\Delete_NewsRequest.cs" />
+    <Compile Include="Requests\DeleteNewsRequest.cs" />
     <Compile Include="Requests\EditCategoryRequest.cs" />
-    <Compile Include="Requests\Edit_NewsRequest.cs" />
+    <Compile Include="Requests\EditNewsRequest.cs" />
     <Compile Include="Requests\FindProductRequest.cs" />
     <Compile Include="Requests\GetNewsDetailRequest.cs" />
     <Compile Include="Requests\GetProductAllRequest.cs" />

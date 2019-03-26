@@ -9,8 +9,8 @@ namespace BusinessLogicInterface
         Task<GetNewsAllResponse> GetNewsAll();
         Task<GetListNewsAllResponse> GetListNewsAll();
         Task<GetNewsDetailResponse> GetNewsDetail(GetNewsDetailRequest request);
-        Task<bool> Add_News(Add_NewsRequest request);
-        Task<bool> Edit_News(Edit_NewsRequest request);
-        Task<bool> Delete_News(Delete_NewsRequest request);
+        Task<bool> Add_News(AddNewsRequest request);
+        Task<bool> Edit_News(EditNewsRequest request);
+        Task<bool> Delete_News(DeleteNewsRequest request);
     }
 }

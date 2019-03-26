@@ -36,6 +36,7 @@ namespace EntityData
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SupportFeature> SupportFeatures { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
     
         public virtual int ADD_CATEGORY(string nameCategory, string imageCategory)
         {

@@ -27,6 +27,5 @@ namespace EntityData
         public Nullable<int> IDCategory { get; set; }
         public Nullable<decimal> PriceSale { get; set; }
         public Nullable<int> InterestProduct { get; set; }
-        public Nullable<int> SellMax { get; set; }
     }
 }

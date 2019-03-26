@@ -427,5 +427,13 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="INSERT_PRODUCT" FunctionName="CookwareDBModel.Store.INSERT_PRODUCT" />
     <FunctionImportMapping FunctionImportName="UPDATE_PRODUCT" FunctionName="CookwareDBModel.Store.UPDATE_PRODUCT" />
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="CookwareDBModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

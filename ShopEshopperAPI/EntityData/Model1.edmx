@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="CookwareDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="PassWord" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PassWord" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
@@ -292,6 +300,7 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Parameter Name="ROLENAME" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="CookwareDBModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Header" EntityType="Self.Header" Schema="dbo" store:Type="Tables" />
@@ -646,6 +655,7 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
             <Parameter Name="InterestProduct" Mode="In" Type="Int32" />
             <Parameter Name="SellMax" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Accounts" EntityType="CookwareDBModel.Account" />
         </EntityContainer>
         <ComplexType Name="FIND_PRODUCT_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -858,6 +868,14 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           <Property Type="Decimal" Name="PriceSale" Nullable="true" Precision="18" Scale="2" />
           <Property Type="Int32" Name="InterestProduct" Nullable="true" />
         </ComplexType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="PassWord" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassWord" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1290,6 +1308,14 @@ warning 6002: The table/view 'CookwareDB.dbo.SupportFeature' does not have a pri
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="INSERT_PRODUCT" FunctionName="CookwareDBModel.Store.INSERT_PRODUCT" />
           <FunctionImportMapping FunctionImportName="UPDATE_PRODUCT" FunctionName="CookwareDBModel.Store.UPDATE_PRODUCT" />
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="CookwareDBModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

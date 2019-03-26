@@ -128,7 +128,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="request">Add_NewsRequest</param>
         /// <returns></returns>
-      public async  Task<bool> Add_News(Add_NewsRequest request)
+      public async  Task<bool> Add_News(AddNewsRequest request)
         {
             bool result = false;
             try
@@ -161,7 +161,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="request">Edit_NewsRequest</param>
         /// <returns></returns>
-       public async Task<bool> Edit_News(Edit_NewsRequest request)
+       public async Task<bool> Edit_News(EditNewsRequest request)
         {
             bool result = false;
             try
@@ -195,7 +195,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="request">Delete_NewsRequest</param>
         /// <returns></returns>
-       public async Task<bool> Delete_News(Delete_NewsRequest request)
+       public async Task<bool> Delete_News(DeleteNewsRequest request)
         {
             bool result = false;
             try
